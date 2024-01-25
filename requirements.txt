@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+fastapi-authlib
+python-dotenv
+jinja2
+tortoise-orm
+aiomysql
+python-jose
+bcrypt==4.0.0
+passlib[bcrypt]
+pydantic[email]
+pymongo
