@@ -1,3 +1,7 @@
+# Python neglects
 .env
 ven
 ven/*
+__pycache__/
+*/__pycache__/*
+.pytest_cache
