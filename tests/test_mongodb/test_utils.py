@@ -3,7 +3,7 @@ from datetime import datetime
 import pytest
 from database.mongodb import users_collection, access_tokens_collection, JWT_SECRET, JWT_ALGORITHM
 from database.mongodb.utils import create_user, get_user_by_email, update_user, delete_user, create_access_token, get_access_token, delete_access_token, validate_access_token
-from database.mongodb.models import User, TokenCreate, AccessToken
+from database.mongodb.models import User, TokenCreate
 
 
 @pytest.fixture

@@ -43,7 +43,6 @@ Ensure that JWT_SECRET and JWT_ALGORITHM are properly configured with the secret
 
 from datetime import datetime, timedelta
 from typing import Optional
-from uuid import uuid4
 
 from jose import JWTError, jwt
 
