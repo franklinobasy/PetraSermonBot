@@ -198,12 +198,9 @@ def validate_access_token(access_token: str) -> Optional[AccessToken]:
     try:
         decoded_token = jwt.decode(access_token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
         user_id = decoded_token.get("sub")
-        
-        print(decoded_token, user_id)
 
         # Check if the user_id exists and the token is not expired
         token_data = access_tokens_collection.find_one({"user_id": user_id, "expires_at": {"$gt": datetime.utcnow()}})
-        print(token_data)
         if token_data:
             return AccessToken(**token_data)
         else:
