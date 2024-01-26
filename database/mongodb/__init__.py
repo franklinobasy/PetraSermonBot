@@ -22,3 +22,6 @@ if os.getenv("ENV") == "prod":
 else:
     users_collection = MongoClient('localhost', 27017)["petrasermonbot"]["users"]
     access_tokens_collection = MongoClient('localhost', 27017)["petrasermonbot"]["access_tokens"]
+
+JWT_SECRET = os.getenv("JWT_SECRET")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM")
