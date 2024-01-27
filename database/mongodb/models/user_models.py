@@ -41,13 +41,13 @@ Note:
 """
 from datetime import datetime, timedelta
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from uuid import uuid4
 
 
 class User(BaseModel):
     _id: Optional[str] = None
-    user_id: str = uuid4().hex
+    user_id: str = Field(default_factory=lambda: uuid4().hex)
     email: str
     first_name: str
     last_name: Optional[str] = None

@@ -47,7 +47,7 @@ from typing import Optional
 from jose import JWTError, jwt
 
 from database.mongodb import users_collection, access_tokens_collection, JWT_SECRET, JWT_ALGORITHM
-from .models import User, AccessToken, TokenCreate
+from ..models import User, AccessToken, TokenCreate
 
 
 def create_user(user_create: User) -> User:
@@ -208,3 +208,4 @@ def validate_access_token(access_token: str) -> Optional[AccessToken]:
     except JWTError:
         # Token decoding failed, indicating an invalid token
         return None
+
