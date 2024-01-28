@@ -23,6 +23,7 @@ else:
     users_collection = MongoClient('localhost', 27017)["petrasermonbot"]["users"]
     access_tokens_collection = MongoClient('localhost', 27017)["petrasermonbot"]["access_tokens"]
     users_conversations_collections = MongoClient('localhost', 27017)["petrasermonbot"]["users_conversations"]
+    docs_store_collection = MongoClient('localhost', 27017)["petrasermonbot"]["document_store"]
 
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM")
