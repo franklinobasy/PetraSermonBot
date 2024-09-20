@@ -1,0 +1,5 @@
+langchain-google-genai
+pillow
+youtube-transcript-api
+python-dotenv
+sqlalchemy
