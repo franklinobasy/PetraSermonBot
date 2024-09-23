@@ -9,5 +9,6 @@ class SermonYtId(Base):
 
     id = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
+    preacher = Column(String, nullable=False)
     video_id = Column(String, nullable=False, unique=True, index=True)
     transcript = Column(Text, nullable=False)

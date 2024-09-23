@@ -3,3 +3,6 @@ pillow
 youtube-transcript-api
 python-dotenv
 sqlalchemy
+pytest
+langchain_community
+chromadb
