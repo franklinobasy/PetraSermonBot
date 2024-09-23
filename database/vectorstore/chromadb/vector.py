@@ -1,7 +1,10 @@
 import chromadb
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import CrossEncoderReranker
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_chroma import Chroma
+from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 
 CACHE = 'chromadb_persist'
 
@@ -32,8 +35,15 @@ def get_retriever(id, text):
         persist_directory=CACHE,
     )
     
-    return db.as_retriever(
-            search_type='mmr'
-        ) 
+    retriever = db.as_retriever(
+        search_type="mmr",
+        search_kwargs={'k': 5, 'fetch_k': 50}
+    )
     
+    model = HuggingFaceCrossEncoder(model_name="BAAI/bge-reranker-base")
+    compressor = CrossEncoderReranker(model=model, top_n=3)
+    compression_retriever = ContextualCompressionRetriever(
+        compressor=compressor, base_retriever=retriever
+    )
     
+    return compression_retriever

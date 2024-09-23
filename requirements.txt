@@ -6,3 +6,4 @@ sqlalchemy
 pytest
 langchain_community
 chromadb
+sentence-transformers
