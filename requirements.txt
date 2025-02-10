@@ -1,9 +1,7 @@
-langchain-google-genai
-pillow
 youtube-transcript-api
 python-dotenv
 sqlalchemy
 pytest
-langchain_community
-chromadb
-sentence-transformers
+google-genai
+colorama
+streamlit

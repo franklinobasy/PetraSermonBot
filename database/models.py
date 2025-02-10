@@ -4,7 +4,7 @@ from sqlalchemy.orm import declarative_base
 Base = declarative_base()
 
 class SermonYtId(Base):
-    """Model representing a YouTube sermon video with its title, ID, and transcript."""
+    """Model representing a YouTube sermon video with its title, preacher, video ID, and transcript."""
     __tablename__ = 'sermon_youtube_id'
 
     id = Column(Integer, primary_key=True)
