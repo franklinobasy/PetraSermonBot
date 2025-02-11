@@ -40,3 +40,4 @@ def extract_tag_content(text: str, tag: str) -> TagContentResult:
         content=[content.strip() for content in matched_contents],
         found=bool(matched_contents),
     )
+    
